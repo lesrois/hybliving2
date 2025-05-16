@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybeliving - 외국인 유학생 주거 솔루션</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Hybeliving</div>
+            <ul class="nav-links">
+                <li><a href="#services">서비스 소개</a></li>
+                <li><a href="#testimonials">고객 후기</a></li>
+                <li><button onclick="openModal()" class="btn-primary">상담 신청</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>외국인 유학생을 위한<br>스마트한 주거 솔루션</h1>
+                <p>신뢰할 수 있는 파트너와 함께<br>유학생들의 안전하고 편안한 주거 환경을 제공하세요</p>
+                <div class="hero-buttons">
+                    <button onclick="openModal()" class="btn-primary">상담 신청하기</button>
+                </div>
+                <div class="brochure-section">
+                    <span class="brochure-text">브로셔 다운로드</span>
+                    <div class="brochure-buttons">
+                        <a href="brochures/hybeliving_ko.pdf" download class="btn-brochure">
+                            <img src="images/pdf-icon.svg" alt="PDF">
+                            KOR
+                        </a>
+                        <a href="brochures/hybeliving_en.pdf" download class="btn-brochure">
+                            <img src="images/pdf-icon.svg" alt="PDF">
+                            ENG
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>서비스 소개</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <img src="images/verified.svg" alt="검증된 숙소">
+                    <h3>검증된 숙소</h3>
+                    <p>모든 숙소는 전문가의 꼼꼼한 검수를 거쳐 등록됩니다</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/matching.svg" alt="1:1 맞춤 매칭">
+                    <h3>1:1 맞춤 매칭</h3>
+                    <p>학교 위치, 예산, 문화 적응도 반영</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/translation.svg" alt="다국어 지원">
+                    <h3>다국어 지원</h3>
+                    <p>영어, 중국어, 베트남어 등 다양한 언어로 계약 지원</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/automation.svg" alt="관리 자동화">
+                    <h3>관리 자동화</h3>
+                    <p>월세 청구, 고장 신고 등 통합 관리</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/dashboard.svg" alt="현황 대시보드">
+                    <h3>현황 대시보드 제공</h3>
+                    <p>유학생 주거 현황 실시간 확인</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/support.svg" alt="24/7 지원">
+                    <h3>24/7 지원</h3>
+                    <p>긴급 상황 발생 시 신속한 대응 지원</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <h2>계약 프로세스</h2>
+            <div class="process-grid">
+                <div class="process-card" data-step="1">
+                    <img src="images/process-1.svg" alt="상담 신청">
+                    <h3>상담 신청</h3>
+                    <p>간단한 정보 입력으로<br>맞춤 상담을 신청하세요</p>
+                </div>
+                <div class="process-card" data-step="2">
+                    <img src="images/process-2.svg" alt="맞춤 제안">
+                    <h3>맞춤 제안</h3>
+                    <p>대학 위치, 예산, 기간에 맞는<br>최적의 숙소를 제안해드립니다</p>
+                </div>
+                <div class="process-card" data-step="3">
+                    <img src="images/process-3.svg" alt="학생 매칭">
+                    <h3>학생 매칭</h3>
+                    <p>유학생의 선호도와 조건에 맞는<br>숙소를 매칭해드립니다</p>
+                </div>
+                <div class="process-card" data-step="4">
+                    <img src="images/process-4.svg" alt="계약 완료">
+                    <h3>계약 완료</h3>
+                    <p>다국어 계약서 제공으로<br>안전한 계약을 도와드립니다</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section id="case-study" class="case-study">
+        <div class="container">
+            <h2>실제 매칭 사례</h2>
+            <div class="case-slider">
+                <button class="slider-button prev" onclick="moveSlide(-1)">❮</button>
+                <div class="case-slider-container">
+                    <div class="case-card">
+                        <div class="case-image">
+                            <img src="images/sarah.png" alt="중앙대학교 매칭 사례">
+                        </div>
+                        <div class="case-content">
+                            <h3>중앙대학교 교환학생 Sarah의 사례</h3>
+                            <div class="case-section">
+                                <h4>📌 배경</h4>
+                                <p>Sarah는 중앙대학교로 교환학생 입학을 확정했지만,<br>
+                                입국 5일 전까지도 학교 근처에 거주할 곳을 찾지 못해 어려움을 겪고 있었습니다.</p>
+                            </div>
+                            <div class="case-section">
+                                <h4>🛠️ 매칭 과정</h4>
+                                <ul>
+                                    <li>예산: 월 50만원 이하</li>
+                                    <li>위치: 학교 도보권</li>
+                                    <li>계약서 사전 이메일 송부</li>
+                                </ul>
+                            </div>
+                            <div class="case-section">
+                                <h4>💬 후기</h4>
+                                <blockquote>
+                                    "처음 한국에 와서 제일 걱정했던 게 집이었는데,<br>
+                                    미리 정해져 있어서 정말 편했어요."
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-card">
+                        <div class="case-image">
+                            <img src="images/ming.png" alt="서울대학교 매칭 사례">
+                        </div>
+                        <div class="case-content">
+                            <h3>서울대학교 유학생 Ming의 사례</h3>
+                            <div class="case-section">
+                                <h4>📌 배경</h4>
+                                <p>Ming은 서울대학교 정규과정 입학이 확정되었으나,<br>
+                                언어 장벽으로 인해 주거지 계약에 어려움을 겪고 있었습니다.</p>
+                            </div>
+                            <div class="case-section">
+                                <h4>🛠️ 매칭 과정</h4>
+                                <ul>
+                                    <li>예산: 월 65만원 이하</li>
+                                    <li>위치: 지하철 10분 이내</li>
+                                    <li>중국어 계약서 제공</li>
+                                </ul>
+                            </div>
+                            <div class="case-section">
+                                <h4>💬 후기</h4>
+                                <blockquote>
+                                    "중국어로 소통이 가능해서 안심하고 계약할 수 있었어요.<br>
+                                    학교까지 교통도 매우 편리합니다."
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-card">
+                        <div class="case-image">
+                            <img src="images/emma.png" alt="연세대학교 매칭 사례">
+                        </div>
+                        <div class="case-content">
+                            <h3>연세대학교 교환학생 Emma의 사례</h3>
+                            <div class="case-section">
+                                <h4>📌 배경</h4>
+                                <p>Emma는 연세대학교 교환학생으로,<br>
+                                한국에 처음 방문하는 만큼 안전하고 편리한 위치를 원했습니다.</p>
+                            </div>
+                            <div class="case-section">
+                                <h4>🛠️ 매칭 과정</h4>
+                                <ul>
+                                    <li>예산: 월 70만원 이하</li>
+                                    <li>위치: 학교 도보 15분</li>
+                                    <li>여성전용 기숙사 연결</li>
+                                </ul>
+                            </div>
+                            <div class="case-section">
+                                <h4>💬 후기</h4>
+                                <blockquote>
+                                    "안전한 여성전용 기숙사를 찾아주셔서 감사합니다.<br>
+                                    룸메이트들과도 잘 지내고 있어요."
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-button next" onclick="moveSlide(1)">❯</button>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>고객 후기</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card coordinator">
+                    <p>"유학생들의 주거 문제로 늘 고민이었는데, Hybeliving 덕분에 해결했습니다. 전문적이고 신속한 서비스에 매우 만족합니다."</p>
+                    <div class="testimonial-author">
+                        <h4>김미영 과장</h4>
+                        <p class="position">서울대학교 국제협력본부</p>
+                    </div>
+                </div>
+                <div class="testimonial-card student">
+                    <p>"Looking for accommodation in Korea was challenging until I found Hybeliving. The process was smooth and they helped me find a perfect place near my university."</p>
+                    <div class="testimonial-author">
+                        <h4>Sarah Chen</h4>
+                        <p class="position">중앙대학교 교환학생</p>
+                    </div>
+                </div>
+                <div class="testimonial-card coordinator">
+                    <p>"외국인 학생들의 언어 장벽 문제가 완전히 해결되었습니다. 특히 계약서 번역과 커뮤니케이션 지원이 큰 도움이 되었습니다."</p>
+                    <div class="testimonial-author">
+                        <h4>박준호 교수</h4>
+                        <p class="position">연세대학교 국제학부</p>
+                    </div>
+                </div>
+                <div class="testimonial-card student">
+                    <p>"The dormitory they recommended was perfect for me. Safe location, great roommates, and the staff always responds quickly when I need help."</p>
+                    <div class="testimonial-author">
+                        <h4>Maria Garcia</h4>
+                        <p class="position">고려대학교 교환학생</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2>문의하기</h2>
+            <div class="contact-form">
+                <form action="/contact" method="POST">
+                    <div class="form-group">
+                        <label for="name">성함</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="university">소속 대학교</label>
+                        <input type="text" id="university" name="university" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">이메일</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">문의사항</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">상담 신청하기</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Hybeliving</h3>
+                    <p>서울특별시 강남구 테헤란로 123</p>
+                    <p>이메일: contact@hybeliving.com</p>
+                    <p>전화: 02-123-4567</p>
+                </div>
+                <div class="footer-links">
+                    <h4>바로가기</h4>
+                    <ul>
+                        <li><a href="#services">서비스 소개</a></li>
+                        <li><a href="#testimonials">고객 후기</a></li>
+                        <li><a href="javascript:openModal()">상담 신청</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hybeliving. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById('contactModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('contactModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('contactModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Case Study Slider
+        let slideIndex = 0;
+        const cards = document.querySelectorAll('.case-card');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(n) {
+            cards.forEach(card => card.style.display = 'none');
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slideIndex = n;
+            if (slideIndex >= cards.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = cards.length - 1;
+            
+            cards[slideIndex].style.display = 'flex';
+            dots[slideIndex].classList.add('active');
+        }
+
+        function moveSlide(n) {
+            showSlide(slideIndex + n);
+        }
+
+        function currentSlide(n) {
+            showSlide(n);
+        }
+
+        // Initialize slider
+        showSlide(0);
+    </script>
+</body>
+</html> 
