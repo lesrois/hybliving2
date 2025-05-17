@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,6 +18,7 @@
             <ul class="nav-links">
                 <li><a href="#services">서비스 소개</a></li>
                 <li><a href="#testimonials">고객 후기</a></li>
+                <li><a href="#featured">추천 매물</a></li>
                 <li><button onclick="openModal()" class="btn-primary">상담 신청</button></li>
             </ul>
         </div>
@@ -257,6 +259,80 @@
         </div>
     </section>
 
+    <!-- Featured Properties Section -->
+    <section id="featured" class="featured">
+        <div class="container">
+            <h2>추천 매물</h2>
+            <div class="property-grid">
+                <a href="property-details.html" class="property-card">
+                    <div class="property-image">
+                        <img src="images/house1.jpg" alt="서울대입구역 원룸">
+                    </div>
+                    <div class="property-content">
+                        <h3>서울대입구역 신축 원룸</h3>
+                        <div class="property-price">
+                            <span class="price">65만원/월</span>
+                            <span class="deposit">보증금 500만원</span>
+                        </div>
+                        <div class="property-details">
+                            <p class="location"><i class="location-icon"></i>서울대입구역 도보 5분</p>
+                            <ul class="features">
+                                <li>신축건물 (2023년)</li>
+                                <li>가구/가전 완비</li>
+                                <li>보안시설 완비</li>
+                                <li>여성전용</li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="property-details-2.html" class="property-card">
+                    <div class="property-image">
+                        <img src="images/house2.jpg" alt="신촌역 투룸">
+                    </div>
+                    <div class="property-content">
+                        <h3>신촌역 복층형 원룸</h3>
+                        <div class="property-price">
+                            <span class="price">75만원/월</span>
+                            <span class="deposit">보증금 1000만원</span>
+                        </div>
+                        <div class="property-details">
+                            <p class="location"><i class="location-icon"></i>신촌역 도보 3분</p>
+                            <ul class="features">
+                                <li>복층구조</li>
+                                <li>초고속 인터넷</li>
+                                <li>수압 우수</li>
+                                <li>2인 거주 가능</li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="property-details-3.html" class="property-card">
+                    <div class="property-image">
+                        <img src="images/house3.jpg" alt="고려대역 원룸">
+                    </div>
+                    <div class="property-content">
+                        <h3>고려대역 스튜디오</h3>
+                        <div class="property-price">
+                            <span class="price">55만원/월</span>
+                            <span class="deposit">보증금 300만원</span>
+                        </div>
+                        <div class="property-details">
+                            <p class="location"><i class="location-icon"></i>고려대역 도보 8분</p>
+                            <ul class="features">
+                                <li>전기세 포함</li>
+                                <li>공용 세탁실</li>
+                                <li>CCTV 설치</li>
+                                <li>관리비 5만원</li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Modal -->
     <div id="contactModal" class="modal">
         <div class="modal-content">
@@ -304,6 +380,13 @@
                         <li><a href="javascript:openModal()">상담 신청</a></li>
                         <li><a href="#">개인정보처리방침</a></li>
                     </ul>
+                </div>
+                <div class="social-links">
+                    <h4>소셜 미디어</h4>
+                    <a href="https://www.instagram.com/hybliving_kr" target="_blank" class="instagram-btn">
+                        <i class="fab fa-instagram"></i>
+                        Instagram
+                    </a>
                 </div>
             </div>
             <div class="footer-bottom">

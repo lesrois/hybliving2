@@ -1,0 +1,418 @@
+.property-details {
+    padding: 120px 0 60px;
+}
+
+.property-header {
+    margin-bottom: 40px;
+}
+
+.property-header h1 {
+    font-size: 36px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.property-price {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.property-price .price {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.property-price .deposit {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Image Gallery */
+.image-gallery {
+    margin-bottom: 40px;
+}
+
+.main-image {
+    width: 100%;
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.thumbnail-grid img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.thumbnail-grid img:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.thumbnail-grid img.active {
+    opacity: 1;
+    border: 3px solid var(--primary-color);
+}
+
+/* Property Info Sections */
+.property-sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.info-section {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.info-section h2 {
+    color: var(--primary-color);
+    font-size: 22px;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.info-section h2 i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+/* Basic Info Grid */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-item i {
+    color: var(--secondary-color);
+    width: 24px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.info-item span {
+    color: #555;
+    font-size: 15px;
+}
+
+/* Facility Grid */
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.facility-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--light-gray);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.facility-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.facility-item i {
+    color: var(--primary-color);
+    width: 24px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.facility-item span {
+    color: #444;
+    font-size: 15px;
+}
+
+/* Location Info */
+.location-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.location-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.location-item i {
+    color: var(--secondary-color);
+    width: 24px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.location-item span {
+    color: #555;
+    font-size: 15px;
+}
+
+/* Google Maps */
+.google-map {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+}
+
+/* Contact Section */
+.contact-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.contact-section .btn-primary {
+    font-size: 20px;
+    padding: 15px 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .property-info {
+        grid-template-columns: 1fr;
+    }
+
+    .main-image {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .property-details {
+        padding: 100px 0 40px;
+    }
+
+    .property-header h1 {
+        font-size: 28px;
+    }
+
+    .property-price {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .main-image {
+        height: 300px;
+    }
+
+    .thumbnail-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .thumbnail-grid img {
+        height: 80px;
+    }
+
+    .info-section {
+        padding: 20px;
+    }
+
+    .info-grid, 
+    .facility-grid, 
+    .location-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .facility-item {
+        padding: 8px;
+    }
+    
+    .google-map {
+        height: 250px;
+    }
+}
+
+.property-map {
+    width: 100%;
+    height: 200px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.property-description {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-info {
+    margin-top: 1rem;
+    color: #666;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .property-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .thumbnail-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Placeholder Images */
+.placeholder-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+
+.placeholder-image.detail1 {
+    background: linear-gradient(135deg, #4A90E2, #5C6BC0);
+}
+
+.placeholder-image.detail2 {
+    background: linear-gradient(135deg, #43A047, #66BB6A);
+}
+
+.placeholder-image.detail3 {
+    background: linear-gradient(135deg, #FB8C00, #FFA726);
+}
+
+.placeholder-image.detail4 {
+    background: linear-gradient(135deg, #E53935, #EF5350);
+}
+
+.placeholder-image.detail5 {
+    background: linear-gradient(135deg, #8E24AA, #AB47BC);
+}
+
+/* Property Details Page specific styles */
+.property-map {
+    width: 100%;
+    height: 200px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.property-description {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-info {
+    margin-top: 1rem;
+    color: #666;
+} 

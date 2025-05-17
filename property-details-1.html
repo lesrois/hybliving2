@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서울대입구역 신축 원룸 - Hybeliving</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="property-details.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Hybeliving</a>
+            <ul class="nav-links">
+                <li><a href="index.html#services">서비스 소개</a></li>
+                <li><a href="index.html#testimonials">고객 후기</a></li>
+                <li><a href="index.html#featured">추천 매물</a></li>
+                <li><button onclick="openModal()" class="btn-primary">상담 신청</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Property Details Section -->
+    <section class="property-details-section">
+        <div class="container">
+            <div class="property-header">
+                <h1>서울대입구역 신축 원룸</h1>
+                <div class="property-meta">
+                    <span><i class="fas fa-won-sign"></i> 65만원/월</span>
+                    <span><i class="fas fa-coins"></i> 보증금 500만원</span>
+                    <span><i class="fas fa-map-marker-alt"></i> 서울대입구역 도보 5분</span>
+                </div>
+            </div>
+
+            <div class="property-gallery">
+                <div class="main-image">
+                    <img src="images/house1_detail1.jpg" alt="서울대입구역 신축 원룸 거실 전경">
+                </div>
+                <div class="thumbnail-grid">
+                    <img src="images/house1.jpg" alt="건물 외관" onclick="changeMainImage(this.src)">
+                    <img src="images/house1_detail2.jpg" alt="주방 전경" onclick="changeMainImage(this.src)">
+                    <img src="images/house1_detail3.jpg" alt="화장실 전경" onclick="changeMainImage(this.src)">
+                    <img src="images/house1_detail4.jpg" alt="건물 상세" onclick="changeMainImage(this.src)">
+                </div>
+            </div>
+
+            <div class="property-info-grid">
+                <div class="info-card">
+                    <h2><i class="fas fa-info-circle"></i> 기본 정보</h2>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <i class="fas fa-coins"></i>
+                            <span><strong>보증금:</strong> 500만원</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-won-sign"></i>
+                            <span><strong>월세:</strong> 65만원</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <span><strong>관리비:</strong> 5만원</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-expand"></i>
+                            <span><strong>면적:</strong> 8평</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-building"></i>
+                            <span><strong>층수:</strong> 3층/5층</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-compass"></i>
+                            <span><strong>방향:</strong> 남향</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-calendar-check"></i>
+                            <span><strong>입주가능일:</strong> 즉시 입주</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fas fa-home"></i> 시설 정보</h2>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <i class="fas fa-building"></i>
+                            <span>신축건물</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-wind"></i>
+                            <span>에어컨</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-snowflake"></i>
+                            <span>냉장고</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-tv"></i>
+                            <span>TV</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-bed"></i>
+                            <span>침대</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-couch"></i>
+                            <span>소파</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-tshirt"></i>
+                            <span>세탁기</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-fire"></i>
+                            <span>인덕션</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-wifi"></i>
+                            <span>초고속 인터넷</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-video"></i>
+                            <span>CCTV</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h2><i class="fas fa-map-marked-alt"></i> 위치 정보</h2>
+                    <div id="map" class="property-map"></div>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <i class="fas fa-subway"></i>
+                            <span>서울대입구역 도보 5분</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-university"></i>
+                            <span>서울대학교 도보 15분</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-store"></i>
+                            <span>낙성대 상가 도보 3분</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>서울대 먹자골목 도보 7분</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-description">
+                <h2>상세 설명</h2>
+                <p>서울대입구역 도보 5분 거리에 위치한 신축 원룸입니다. 2023년 완공된 건물로 모든 시설이 새것이며, 깔끔한 인테리어와 효율적인 공간 구성이 돋보입니다.</p>
+                <p>남향 위치로 채광이 매우 좋으며, 모든 생활 가전과 가구가 새것으로 구비되어 있어 즉시 입주가 가능합니다. 서울대학교 학생들에게 인기가 많은 위치에 있으며, 인근 상가와 편의시설이 잘 갖추어져 있습니다.</p>
+            </div>
+
+            <div class="contact-section">
+                <button onclick="openModal()" class="btn-primary">상담 신청하기</button>
+                <p class="contact-info">문의사항은 02-123-4567로 연락주세요.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2>문의하기</h2>
+            <div class="contact-form">
+                <form action="/contact" method="POST">
+                    <div class="form-group">
+                        <label for="name">성함</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">연락처</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">이메일</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="visit-date">방문 희망일</label>
+                        <input type="date" id="visit-date" name="visit-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">문의사항</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">상담 신청하기</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('contactModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('contactModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeMainImage(src) {
+            document.querySelector('.main-image img').src = src;
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('contactModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html> 
