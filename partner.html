@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybeliving - 파트너용</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="landing.html" class="logo" style="text-decoration:none; color:#4f46e5;">Hybeliving</a>
+            <ul class="nav-links">
+                <li><a href="#services">서비스 소개</a></li>
+                <li><a href="#testimonials">고객 후기</a></li>
+                <li><a href="#featured">추천 매물</a></li>
+                <li><button onclick="openModal()" class="btn-primary">상담 신청</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>외국인 유학생 주거 1위 플랫폼, 하이브리빙<br>입주부터 행정까지 올인원으로 해결!</h1>
+                <p>신뢰할 수 있는 파트너와 함께<br>유학생들의 안전하고 편안한 주거 환경을 제공하세요</p>
+                <div class="hero-buttons">
+                    <button onclick="openModal()" class="btn-primary">상담 신청하기</button>
+                </div>
+                <div class="brochure-section">
+                    <span class="brochure-text">브로셔 다운로드</span>
+                    <div class="brochure-buttons">
+                        <a href="brochures/hybeliving_ko.pdf" download class="btn-brochure">
+                            <img src="images/pdf-icon.svg" alt="PDF">
+                            KOR
+                        </a>
+                        <a href="brochures/hybeliving_en.pdf" download class="btn-brochure">
+                            <img src="images/pdf-icon.svg" alt="PDF">
+                            ENG
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>서비스 소개</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <img src="images/verified.svg" alt="검증된 숙소">
+                    <h3>검증된 숙소</h3>
+                    <p>모든 숙소는 전문가의<br>꼼꼼한 검수를 거쳐 등록됩니다</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/matching.svg" alt="1:1 맞춤 매칭">
+                    <h3>1:1 맞춤 매칭</h3>
+                    <p>학생 개인의 학교 위치,<br>예산, 성별, 문화 적응도 반영</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/translation.svg" alt="다국어 지원">
+                    <h3>다국어 지원</h3>
+                    <p>다양한 언어로 학생들의<br>문의사항 지원</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/dashboard.svg" alt="관리자 편의성 제공">
+                    <h3>주거현황 데이터베이스</h3>
+                    <p>관리자를 위한<br>유학생 통합 관리 시스템 구축</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/automation.svg" alt="고장/편의 실시간 지원">
+                    <h3>유학생 맞춤형 A/S</h3>
+                    <p>월세 청구, 고장 신고 등 통합 관리</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/support.svg" alt="24/7 지원">
+                    <h3>학교 연계서비스</h3>
+                    <p>긴급 상황 발생 시<br>즉시 학교연계 지원</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <h2>계약 프로세스</h2>
+            <div class="process-grid">
+                <div class="process-card" data-step="1">
+                    <img src="images/process-1.svg" alt="상담 신청">
+                    <h3>상담 신청</h3>
+                    <p>간단한 정보 입력으로<br>맞춤 상담을 신청하세요</p>
+                </div>
+                <div class="process-card" data-step="2">
+                    <img src="images/process-2.svg" alt="맞춤 제안">
+                    <h3>맞춤 제안</h3>
+                    <p>대학 위치, 예산, 기간에 맞는<br>최적의 숙소를 제안해드립니다</p>
+                </div>
+                <div class="process-card" data-step="3">
+                    <img src="images/process-3.svg" alt="학생 매칭">
+                    <h3>학생 매칭</h3>
+                    <p>유학생의 선호도와 조건에 맞는<br>숙소를 매칭해드립니다</p>
+                </div>
+                <div class="process-card" data-step="4">
+                    <img src="images/process-4.svg" alt="계약 완료">
+                    <h3>계약 완료</h3>
+                    <p>다국어 계약서 제공으로<br>안전한 계약을 도와드립니다</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section id="case-study" class="case-study">
+        <div class="container">
+            <h2>실제 매칭 사례</h2>
+            <div class="case-slider">
+                <button class="slider-button prev" onclick="moveSlide(-1)">❮</button>
+                <div class="case-slider-container">
+                    <div class="case-card">
+                        <div class="case-image">
+                            <img src="images/person1.png" alt="서울대학교 매칭 사례">
+                        </div>
+                        <div class="case-content">
+                            <h3>아주대학교 학생 김재연의 사레</h3>
+                            <div class="case-section">
+                                <h4>📌 배경</h4>
+                                <p>아주대학교 심리학과 학생으로<br>
+                                외국인들과 함께 거주하면서 안전하고<br>
+                                편리한 위치를 원했습니다</p>
+                            </div>
+                            <div class="case-section">
+                                <h4>🛠️ 매칭 과정</h4>
+                                <ul>
+                                    <li>예산: 월 50만원 이하</li>
+                                    <li>위치: 학교 도보 10분</li>
+                                    <li>여성전용 집 연결</li>
+                                </ul>
+                            </div>
+                            <div class="case-section">
+                                <h4>💬 후기</h4>
+                                <blockquote>
+                                    "인테리어 신경 안쓰는 곳들도 되게 많던데,<br>
+                                    여기는 청소부터 가구 배치까지<br>
+                                    신경 써주신 느낌이 너무 좋아요!"
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-card">
+                        <div class="case-image">
+                            <img src="images/person2.png" alt="연세대학교 매칭 사례">
+                        </div>
+                        <div class="case-content">
+                            <h3>아주대학교 교환학생 Emma의 사례</h3>
+                            <div class="case-section">
+                                <h4>📌 배경</h4>
+                                <p> 아주대학교 금융공학과 학생으로,<br>
+                                    한국에 처음 방문하는 만큼<br>
+                                    안전하고 편리한 위치를 원했습니다</p>
+                            </div>
+                            <div class="case-section">
+                                <h4>🛠️ 매칭 과정</h4>
+                                <ul>
+                                    <li>예산: 월 40만원 이하</li>
+                                    <li>위치: 학교 도보 10분</li>
+                                    <li>여성전용 집 연결</li>
+                                </ul>
+                            </div>
+                            <div class="case-section">
+                                <h4>💬 후기</h4>
+                                <blockquote>
+                                    "편의점, 카페 등 많은 편의시설들이 집 근처에 있고,<br>
+                                    무엇보다 다른 외국인 친구들과 도움이 필요할 때<br>
+                                    같이 얘기나눌 수 있어서 너무 편안하고 좋았어요 !"
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-button next" onclick="moveSlide(1)">❯</button>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>고객 후기</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card coordinator">
+                    <p>"유학생들의 주거 문제로 늘 고민이었는데, Hybeliving 덕분에 해결했습니다. 전문적이고 신속한 서비스에 매우 만족합니다."</p>
+                    <div class="testimonial-author">
+                        <h4>최정영 팀장</h4>
+                        <p class="position">아주대학교 국제협력팀</p>
+                    </div>
+                </div>
+                <div class="testimonial-card student">
+                    <p>"연간 400-500명씩 늘어나는 어학생 친구들의 주거문제 때문에 골치 아팠는데, Hybeliving 에서 이 문제를 해결해주어, 완전히 해결되었습니다."</p>
+                    <div class="testimonial-author">
+                        <h4>최동렬 센터장</h4>
+                        <p class="position">아주대학교 어학당</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties Section -->
+    <section id="featured" class="featured">
+        <div class="container">
+            <h2>추천 매물</h2>
+            <div class="property-grid">
+                <a href="property-details.html" class="property-card">
+                    <div class="property-image">
+                        <img src="images/ajou1/ajou1_detail2.jpg" alt="서울대입구역 원룸">
+                    </div>
+                    <div class="property-content">
+                        <h3>아주대 1호점</h3>
+                        <div class="property-price">
+                            <span class="price">1인실 50만원/월,<br>2인실 40만원/월</span>
+                            <span class="deposit">보증금 월세 2달치</span>
+                        </div>
+                        <div class="property-details">
+                            <p class="location"><i class="location-icon"></i>아주대 도보 5분</p>
+                            <ul class="features">
+                                <li>신축건물 (2023년)</li>
+                                <li>가구/가전 완비</li>
+                                <li>보안시설 완비</li>
+                                <li>여성전용</li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="property-details-2.html" class="property-card">
+                    <div class="property-image">
+                        <img src="images/ajou2/ajou2_detail1.jpg" alt="신촌역 투룸">
+                    </div>
+                    <div class="property-content">
+                        <h3>아주대 2호점</h3>
+                        <div class="property-price">
+                            <span class="price">1인실 50만원/월,<br>2인실 40만원/월</span>
+                            <span class="deposit">보증금 월세 2달치</span>
+                        </div>
+                        <div class="property-details">
+                            <p class="location"><i class="location-icon"></i>아주대 도보 3분</p>
+                            <ul class="features">
+                                <li>보안시설 완비</li>
+                                <li>가구/가전 완비</li>
+                                <li>수압 우수</li>
+                                <li>2인 거주 가능</li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="property-details-3.html" class="property-card">
+                    <div class="property-image">
+                        <img src="images/seoul1/seoul1_detail1.jpg" alt="고려대역 원룸">
+                    </div>
+                    <div class="property-content">
+                        <h3>서울대점</h3>
+                        <div class="property-price">
+                            <span class="price">1인실 68만원/월,<br>2인실 45만원/월</span>
+                            <span class="deposit">보증금 월세 2달치</span>
+                        </div>
+                        <div class="property-details">
+                            <p class="location"><i class="location-icon"></i>서울대입구역 3번출구 바로 앞</p>
+                            <ul class="features">
+                                <li>역세권 도보 3분</li>
+                                <li>통창 관악산 뷰</li>
+                                <li>가구/가전 완비</li>
+                                <li>보안시설 완비</li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-details-4.html" class="property-card">
+                    <div class="property-image">
+                        <img src="images/ajou3/아주대_301_1.jpg" alt="아주대 3호점">
+                    </div>
+                    <div class="property-content">
+                        <h3>아주대 3호점</h3>
+                        <div class="property-price">
+                            <span class="price">1인실 50만원/월,<br>2인실 40만원/월</span>
+                            <span class="deposit">보증금 월세 2달치</span>
+                        </div>
+                        <div class="property-details">
+                            <p class="location"><i class="location-icon"></i>아주대학교병원 앞</p>
+                            <ul class="features">
+                                <li>신축건물</li>
+                                <li>TV</li>
+                                <li>에어컨</li>
+                                <li>만실</li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+                <a href="property-details-5.html" class="property-card">
+                    <div class="property-image">
+                        <img src="images/ajou4/ajou_201_1.jpg" alt="아주대 4호점">
+                    </div>
+                    <div class="property-content">
+                        <h3>아주대 4호점</h3>
+                        <div class="property-price">
+                            <span class="price">1인실 55만원/월,<br>2인실 42만원/월</span>
+                            <span class="deposit">보증금 월세 2달치</span>
+                        </div>
+                        <div class="property-details">
+                            <p class="location"><i class="location-icon"></i>아주대학교 도보 7분</p>
+                            <ul class="features">
+                                <li>신축건물</li>
+                                <li>TV</li>
+                                <li>에어컨</li>
+                                <li>즉시입주</li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2>문의하기</h2>
+            <div class="contact-form">
+                <form action="/contact" method="POST">
+                    <div class="form-group">
+                        <label for="name">성함</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="university">소속 대학교</label>
+                        <input type="text" id="university" name="university" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">이메일</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">문의사항</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">상담 신청하기</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Hybeliving</h3>
+                    <p>서울특별시 강남구 테헤란로 123</p>
+                    <p>이메일: contact@hybeliving.com</p>
+                    <p>전화: 02-123-4567</p>
+                </div>
+                <div class="footer-links">
+                    <h4>바로가기</h4>
+                    <ul>
+                        <li><a href="#services">서비스 소개</a></li>
+                        <li><a href="#testimonials">고객 후기</a></li>
+                        <li><a href="javascript:openModal()">상담 신청</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                    </ul>
+                </div>
+                <div class="social-links">
+                    <h4>소셜 미디어</h4>
+                    <a href="https://www.instagram.com/hybliving_kr" target="_blank" class="instagram-btn">
+                        <i class="fab fa-instagram"></i>
+                        Instagram
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hybeliving. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById('contactModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('contactModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('contactModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Case Study Slider
+        let slideIndex = 0;
+        const cards = document.querySelectorAll('.case-card');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(n) {
+            cards.forEach(card => card.style.display = 'none');
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slideIndex = n;
+            if (slideIndex >= cards.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = cards.length - 1;
+            
+            cards[slideIndex].style.display = 'flex';
+            dots[slideIndex].classList.add('active');
+        }
+
+        function moveSlide(n) {
+            showSlide(slideIndex + n);
+        }
+
+        function currentSlide(n) {
+            showSlide(n);
+        }
+
+        // Initialize slider
+        showSlide(0);
+    </script>
+</body>
+</html> 
