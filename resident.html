@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나에게 맞는 쉐어하우스 찾기 | Hybeliving</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f7f7fb;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .header {
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            padding: 0 0 0 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 24px 18px 24px;
+        }
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 900;
+            color: #4f46e5;
+            letter-spacing: -1px;
+        }
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .lang-btn {
+            background: #f7f7fb;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            padding: 7px 18px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #4f46e5;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+        }
+        .lang-btn.active, .lang-btn:hover {
+            background: #4f46e5;
+            color: #fff;
+        }
+        .search-bar {
+            max-width: 700px;
+            margin: 36px auto 0 auto;
+            background: #fff;
+            border-radius: 32px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            display: flex;
+            align-items: center;
+            padding: 10px 18px;
+            gap: 18px;
+            position: relative;
+        }
+        .search-bar input, .search-bar select {
+            border: none;
+            background: transparent;
+            font-size: 1.1rem;
+            padding: 8px 10px;
+            outline: none;
+        }
+        .search-bar select {
+            min-width: 90px;
+        }
+        .search-btn {
+            background: #4f46e5;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .search-btn:hover {
+            background: #3730a3;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 16px 32px 16px;
+        }
+        .result-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+            color: #222;
+        }
+        .result-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        .house-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.2s, transform 0.2s;
+            cursor: pointer;
+        }
+        .house-card:hover {
+            box-shadow: 0 8px 32px rgba(79,70,229,0.13);
+            transform: translateY(-4px) scale(1.02);
+        }
+        .house-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .house-info {
+            padding: 20px 18px 16px 18px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .house-title {
+            font-size: 1.18rem;
+            font-weight: 700;
+            color: #222;
+        }
+        .house-meta {
+            font-size: 1.01rem;
+            color: #555;
+        }
+        .house-features {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            font-size: 0.97rem;
+            color: #4f46e5;
+        }
+        @media (max-width: 700px) {
+            .header-inner, .container {
+                padding-left: 8px;
+                padding-right: 8px;
+            }
+            .search-bar {
+                flex-direction: column;
+                gap: 10px;
+                border-radius: 18px;
+            }
+            .house-img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-inner">
+            <a href="landing.html" class="logo" style="text-decoration:none; color:#4f46e5;">Hybeliving</a>
+            <div class="lang-switch">
+                <button class="lang-btn active" id="korBtn">KOR</button>
+                <button class="lang-btn" id="engBtn">ENG</button>
+            </div>
+        </div>
+    </div>
+    <form class="search-bar">
+        <input type="text" id="searchInput" placeholder="지역, 학교명 등으로 검색" style="flex:2;" />
+        <select name="budget" id="budgetSelect">
+            <option value="">예산(월세)</option>
+            <option value="40">40만원 이하</option>
+            <option value="50">50만원 이하</option>
+            <option value="60">60만원 이하</option>
+        </select>
+        <select name="roomtype" id="roomtypeSelect">
+            <option value="">인실</option>
+            <option value="1">1인실</option>
+            <option value="2">2인실</option>
+        </select>
+        <button type="submit" class="search-btn"><span>🔍</span></button>
+    </form>
+    <div class="container">
+        <div class="result-title" id="resultTitle">추천 쉐어하우스</div>
+        <div class="result-list">
+            <a href="property-details.html" class="house-card" style="text-decoration:none;">
+                <img src="images/ajou1/ajou1_detail2.jpg" alt="아주대 쉐어하우스" class="house-img">
+                <div class="house-info">
+                    <div class="house-title" id="title1">아주대 1호점</div>
+                    <div class="house-meta" id="meta1">월세 1인실 50만원 / 2인실 40만원 · 아주대 도보 5분</div>
+                    <div class="house-features" id="features1">
+                        <span>신축</span><span>가구/가전 완비</span><span>여성전용</span>
+                    </div>
+                </div>
+            </a>
+            <a href="property-details-3.html" class="house-card" style="text-decoration:none;">
+                <img src="images/seoul1/seoul1_detail1.jpg" alt="서울대 쉐어하우스" class="house-img">
+                <div class="house-info">
+                    <div class="house-title" id="title2">서울대점</div>
+                    <div class="house-meta" id="meta2">월세 1인실 68만원 / 2인실 45만원 · 서울대입구역 3분</div>
+                    <div class="house-features" id="features2">
+                        <span>역세권</span><span>관악산 뷰</span><span>가구/가전 완비</span>
+                    </div>
+                </div>
+            </a>
+            <a href="property-details-2.html" class="house-card" style="text-decoration:none;">
+                <img src="images/ajou2/ajou2_detail1.jpg" alt="아주대 쉐어하우스" class="house-img">
+                <div class="house-info">
+                    <div class="house-title" id="title3">아주대 2호점</div>
+                    <div class="house-meta" id="meta3">월세 1인실 50만원 / 2인실 40만원 · 아주대 도보 3분</div>
+                    <div class="house-features" id="features3">
+                        <span>보안시설</span><span>수압 우수</span><span>2인 거주 가능</span>
+                    </div>
+                </div>
+            </a>
+            <a href="property-details-4.html" class="house-card" style="text-decoration:none;">
+                <img src="images/ajou3/아주대_301_1.jpg" alt="아주대 3호점 대표 이미지" class="house-img">
+                <div class="house-info">
+                    <div class="house-title" id="title4">아주대 3호점</div>
+                    <div class="house-meta" id="meta4">월세 1인실 50만원 / 2인실 40만원 · 아주대학교병원 앞</div>
+                    <div class="house-features" id="features4">
+                        <span>신축건물</span><span>TV</span><span>에어컨</span>
+                    </div>
+                </div>
+            </a>
+            <a href="property-details-5.html" class="house-card" style="text-decoration:none;">
+                <img src="images/ajou4/ajou_201_1.jpg" alt="아주대 4호점 대표 이미지" class="house-img">
+                <div class="house-info">
+                    <div class="house-title" id="title5">아주대 4호점</div>
+                    <div class="house-meta" id="meta5">월세 1인실 55만원 / 2인실 42만원 · 아주대학교 도보 7분</div>
+                    <div class="house-features" id="features5">
+                        <span>신축건물</span><span>TV</span><span>에어컨</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <script>
+    // 언어 변환 텍스트 데이터
+    const korData = {
+        searchPlaceholder: "지역, 학교명 등으로 검색",
+        budget: ["예산(월세)", "40만원 이하", "50만원 이하", "60만원 이하"],
+        roomtype: ["인실", "1인실", "2인실"],
+        resultTitle: "추천 쉐어하우스",
+        cards: [
+            {
+                title: "아주대 1호점",
+                meta: "월세 1인실 50만원 / 2인실 40만원 · 아주대 도보 5분",
+                features: ["신축", "가구/가전 완비", "여성전용"]
+            },
+            {
+                title: "서울대점",
+                meta: "월세 1인실 68만원 / 2인실 45만원 · 서울대입구역 3분",
+                features: ["역세권", "관악산 뷰", "가구/가전 완비"]
+            },
+            {
+                title: "아주대 2호점",
+                meta: "월세 1인실 50만원 / 2인실 40만원 · 아주대 도보 3분",
+                features: ["보안시설", "수압 우수", "2인 거주 가능"]
+            }
+        ]
+    };
+    const engData = {
+        searchPlaceholder: "Search by area, university, etc.",
+        budget: ["Budget (monthly)", "Under 400,000 KRW", "Under 500,000 KRW", "Under 600,000 KRW"],
+        roomtype: ["Room type", "Single", "Double"],
+        resultTitle: "Recommended Share Houses",
+        cards: [
+            {
+                title: "Ajou House #1",
+                meta: "Single 500,000 KRW / Double 400,000 KRW · 5 min walk to Ajou Univ.",
+                features: ["New", "Fully furnished", "Women only"]
+            },
+            {
+                title: "Seoul National House",
+                meta: "Single 680,000 KRW / Double 450,000 KRW · 3 min to SNU Station",
+                features: ["Near subway", "Mountain view", "Fully furnished"]
+            },
+            {
+                title: "Ajou House #2",
+                meta: "Single 500,000 KRW / Double 400,000 KRW · 3 min walk to Ajou Univ.",
+                features: ["Security", "Strong water pressure", "2 people available"]
+            }
+        ]
+    };
+    // 아주대 3호점 다국어 데이터 추가
+    korData.cards.push({
+        title: "아주대 3호점",
+        meta: "월세 1인실 50만원 / 2인실 40만원 · 아주대학교병원 앞",
+        features: ["신축건물", "TV", "에어컨"]
+    });
+    engData.cards.push({
+        title: "Ajou House #3",
+        meta: "Single 500,000 KRW / Double 400,000 KRW · In front of Ajou Univ. Hospital",
+        features: ["New", "TV", "Air conditioner"]
+    });
+    // 아주대 4호점 다국어 데이터 추가
+    korData.cards.push({
+        title: "아주대 4호점",
+        meta: "월세 1인실 55만원 / 2인실 42만원 · 아주대학교 도보 7분",
+        features: ["신축건물", "TV", "에어컨"]
+    });
+    engData.cards.push({
+        title: "Ajou House #4",
+        meta: "Single 550,000 KRW / Double 420,000 KRW · 7 min walk to Ajou Univ.",
+        features: ["New", "TV", "Air conditioner"]
+    });
+    // 5개 카드까지 지원하도록 수정
+    function setLang(lang) {
+        const data = lang === 'kor' ? korData : engData;
+        document.getElementById('searchInput').placeholder = data.searchPlaceholder;
+        const budgetSel = document.getElementById('budgetSelect');
+        for(let i=0; i<budgetSel.options.length; i++) budgetSel.options[i].text = data.budget[i];
+        const roomtypeSel = document.getElementById('roomtypeSelect');
+        for(let i=0; i<roomtypeSel.options.length; i++) roomtypeSel.options[i].text = data.roomtype[i];
+        document.getElementById('resultTitle').textContent = data.resultTitle;
+        // 카드
+        for(let i=1; i<=5; i++) {
+            if(document.getElementById('title'+i)) {
+                document.getElementById('title'+i).textContent = data.cards[i-1].title;
+                document.getElementById('meta'+i).textContent = data.cards[i-1].meta;
+                const features = document.getElementById('features'+i);
+                features.innerHTML = '';
+                data.cards[i-1].features.forEach(f => {
+                    const span = document.createElement('span');
+                    span.textContent = f;
+                    features.appendChild(span);
+                });
+            }
+        }
+        // 버튼 스타일
+        document.getElementById('korBtn').classList.toggle('active', lang==='kor');
+        document.getElementById('engBtn').classList.toggle('active', lang==='eng');
+    }
+    document.getElementById('korBtn').onclick = function(e){ e.preventDefault(); setLang('kor'); };
+    document.getElementById('engBtn').onclick = function(e){ e.preventDefault(); setLang('eng'); };
+    // 초기값 한글
+    setLang('kor');
+    </script>
+</body>
+</html> 

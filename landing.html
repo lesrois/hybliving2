@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybeliving - 선택</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f7f7fb;
+            font-family: 'Noto Sans KR', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        .bg-image {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            background: url('images/hero-students.png') center center/cover no-repeat;
+            opacity: 1.0;
+            filter: blur(2px);
+        }
+        .bg-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #f7f7fbcc;
+            z-index: 1;
+        }
+        .select-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            z-index: 2;
+            position: relative;
+        }
+        .select-title {
+            font-size: 3.0rem;
+            font-weight: 800;
+            margin-bottom: 18px;
+            color: #222;
+            text-align: center;
+            text-shadow: 0 2px 8px #fff8;
+            letter-spacing: -1px;
+        }
+        .select-subtitle {
+            font-size: 1.5rem;
+            color: #444;
+            margin-bottom: 38px;
+            text-align: center;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+            display: inline-block;
+        }
+        .brand {
+            color: #4f46e5;
+            font-weight: 700;
+        }
+        .select-buttons {
+            display: flex;
+            gap: 40px;
+        }
+        .select-btn {
+            padding: 44px 80px;
+            font-size: 2.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 20px;
+            background: #4f46e5;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+            box-shadow: 0 4px 24px rgba(79,70,229,0.10);
+            z-index: 2;
+            text-decoration: none;
+        }
+        .select-btn:hover {
+            background: #3730a3;
+            transform: translateY(-2px) scale(1.04);
+        }
+        a.select-btn {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-image"></div>
+    <div class="bg-overlay"></div>
+    <div class="select-container">
+        <div class="select-title">외국인 유학생을 위한 스마트한 주거솔루션, <span class="brand"><br>하이브리빙</span></span></div>
+        <div class="select-buttons">
+            <a href="resident.html" class="select-btn">거주자용</a>
+            <a href="index.html" class="select-btn">파트너용</a>
+        </div>
+    </div>
+</body>
+</html> 

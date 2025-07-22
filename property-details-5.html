@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>아주대 1호점</title>
+    <title>아주대 4호점 - Hybeliving</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="property-details.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a href="landing.html" class="logo">Hybeliving</a>
+            <a href="index.html" class="logo">Hybeliving</a>
             <ul class="nav-links">
                 <li><a href="index.html#services">서비스 소개</a></li>
                 <li><a href="index.html#testimonials">고객 후기</a></li>
@@ -25,128 +26,107 @@
         </div>
     </nav>
 
-    <!-- Property Details Section -->
-    <section class="property-details-section">
+    <!-- Property Details -->
+    <section class="property-details">
         <div class="container">
             <div class="property-header">
-                <h1>아주대 1호점</h1>
-                <div class="property-meta">
-                    <span><i class="fas fa-won-sign"></i> 1인실 50만원/월, 2인실 40만원/월</span>
-                    <span><i class="fas fa-coins"></i> 보증금 월세 2달치</span>
-                    <span><i class="fas fa-map-marker-alt"></i> 아주대학교 도보 5분</span>
+                <h1>아주대 4호점</h1>
+                <div class="property-price">
+                    <span class="price">1인실 55만원/월, 2인실 42만원/월</span>
+                    <span class="deposit">보증금 월세 2달치</span>
                 </div>
             </div>
 
-            <div class="property-gallery">
+            <!-- Image Gallery -->
+            <div class="image-gallery">
                 <div class="main-image">
-                    <img src="images/ajou1/ajou1_detail1.jpg" alt="아주대 1호점 거실 전경">
+                    <img src="images/ajou4/ajou_201_1.jpg" alt="아주대 4호점 대표 이미지" id="mainImage">
                 </div>
                 <div class="thumbnail-grid">
-                    <img src="images/ajou1/ajou1_detail2.jpg" alt="건물 외관" onclick="changeMainImage(this.src); openImageModal(this.src)">
-                    <img src="images/ajou1/ajou1_detail3.jpg" alt="주방 전경" onclick="changeMainImage(this.src); openImageModal(this.src)">
-                    <img src="images/ajou1/ajou1_detail4.jpg" alt="화장실 전경" onclick="changeMainImage(this.src); openImageModal(this.src)">
-                    <img src="images/ajou1/ajou1_detail5.jpg" alt="건물 상세" onclick="changeMainImage(this.src); openImageModal(this.src)">
+                    <img src="images/ajou4/ajou_201_1.jpg" alt="대표" onclick="changeMainImage(this.src); openImageModal(this.src)" class="active">
+                    <img src="images/ajou4/ajou_201_2.jpg" alt="내부1" onclick="changeMainImage(this.src); openImageModal(this.src)">
+                    <img src="images/ajou4/ajou_201_3.jpg" alt="내부2" onclick="changeMainImage(this.src); openImageModal(this.src)">
+                    <img src="images/ajou4/ajou_201_4.jpg" alt="내부3" onclick="changeMainImage(this.src); openImageModal(this.src)">
+                    <img src="images/ajou4/ajou_201_5.jpg" alt="내부4" onclick="changeMainImage(this.src); openImageModal(this.src)">
+                    <img src="images/ajou4/ajou_201_6.jpg" alt="내부5" onclick="changeMainImage(this.src); openImageModal(this.src)">
+                    <img src="images/ajou4/ajou_201_7.jpg" alt="내부6" onclick="changeMainImage(this.src); openImageModal(this.src)">
+                    <img src="images/ajou4/ajou_201_8.jpg" alt="내부7" onclick="changeMainImage(this.src); openImageModal(this.src)">
+                    <img src="images/ajou4/ajou_201_9.jpg" alt="내부8" onclick="changeMainImage(this.src); openImageModal(this.src)">
                 </div>
             </div>
 
-            <div class="property-info-grid">
-                <div class="info-card">
+            <div class="property-sections">
+                <!-- 기본 정보 섹션 -->
+                <div class="info-section">
                     <h2><i class="fas fa-info-circle"></i> 기본 정보</h2>
-                    <div class="info-list">
+                    <div class="info-grid">
                         <div class="info-item">
                             <i class="fas fa-coins"></i>
-                            <span><strong>보증금:</strong> 월세 2달치</span>
+                            <span>보증금: <strong>월세 2달치</strong></span>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-won-sign"></i>
-                            <span><strong>월세:</strong> 50만원/1인실, 40만원/2인실</span>
+                            <span>월세: <strong>1인 55, 2인 42</strong></span>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-file-invoice-dollar"></i>
-                            <span><strong>관리비:</strong> 별도도</span>
+                            <span>관리비: <strong>별도</strong></span>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-expand"></i>
-                            <span><strong>면적:</strong> 25평</span>
+                            <span>면적: <strong>23평</strong></span>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-building"></i>
-                            <span><strong>층수:</strong> 3층/4층</span>
+                            <span>층수: <strong>2층/4층</strong></span>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-compass"></i>
-                            <span><strong>방향:</strong> 남향</span>
+                            <span>방향: <strong>-</strong></span>
                         </div>
                         <div class="info-item">
-                            <i class="fas fa-calendar-check"></i>
-                            <span><strong>입주가능일:</strong> 만실</span>
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>입주가능일: <strong>즉시입주</strong></span>
                         </div>
                     </div>
                 </div>
 
-                <div class="info-card">
+                <!-- 시설 정보 섹션 -->
+                <div class="info-section">
                     <h2><i class="fas fa-home"></i> 시설 정보</h2>
-                    <div class="info-list">
-                        <div class="info-item">
-                            <i class="fas fa-wind"></i>
-                            <span>에어컨</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-snowflake"></i>
-                            <span>냉장고</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-tv"></i>
-                            <span>TV</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-bed"></i>
-                            <span>침대</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-couch"></i>
-                            <span>옷장</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-tshirt"></i>
-                            <span>세탁기</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-fire"></i>
-                            <span>인덕션</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-wifi"></i>
-                            <span>초고속 인터넷</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-video"></i>
-                            <span>가구</span>
-                        </div>
+                    <div class="facility-grid">
+                        <div class="facility-item"><i class="fas fa-building"></i><span>신축건물</span></div>
+                        <div class="facility-item"><i class="fas fa-tv"></i><span>TV</span></div>
+                        <div class="facility-item"><i class="fas fa-snowflake"></i><span>냉장고</span></div>
+                        <div class="facility-item"><i class="fas fa-wind"></i><span>에어컨</span></div>
+                        <div class="facility-item"><i class="fas fa-washer"></i><span>세탁기</span></div>
+                        <div class="facility-item"><i class="fas fa-couch"></i><span>옷장</span></div>
+                        <div class="facility-item"><i class="fas fa-wifi"></i><span>초고속 인터넷</span></div>
+                        <div class="facility-item"><i class="fas fa-shield-alt"></i><span>보안시설</span></div>
                     </div>
                 </div>
 
-                <div class="info-card">
-                    <h2><i class="fas fa-map-marked-alt"></i> 위치 정보</h2>
-                    <div id="map" class="property-map"></div>
-                    <div class="info-list">
-                        <div class="info-item">
+                <!-- 위치 정보 섹션 -->
+                <div class="info-section">
+                    <h2><i class="fas fa-map-marker-alt"></i> 위치 정보</h2>
+                    <div id="map" class="google-map"></div>
+                    <div class="location-info">
+                        <div class="location-item">
                             <i class="fas fa-subway"></i>
-                            <span>아주대학교 도보 5분</span>
+                            <span>아주대학교 도보 7분</span>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="property-description">
-                <h2>상세 설명</h2>
-                <p>아주대학교병원 앞에 위치한 안전한 동네인 광교중앙마을에 있습니다.</p>
-                <p>깔끔한 인테리어로 공간이 구성되었고, 한달 2회 청소가 제공됩니다.</p>
+                <!-- 상세 설명 섹션 -->
+                <div class="info-section">
+                    <h2><i class="fas fa-align-left"></i> 상세 설명</h2>
+                    <p>아주대학교 근처 신축 건물로, 밝고 쾌적한 인테리어와 다양한 편의시설이 갖추어져 있습니다. 한달 2회 청소가 제공됩니다.</p>
+                </div>
             </div>
 
             <div class="contact-section">
                 <button onclick="openModal()" class="btn-primary">상담 신청하기</button>
-                <p class="contact-info">문의사항은 010-2482-9330로 연락주세요.</p>
             </div>
         </div>
     </section>
@@ -193,18 +173,17 @@
     </div>
 
     <script>
-        function openModal() {
-            document.getElementById('contactModal').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            document.getElementById('contactModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
+        // Image Gallery
         function changeMainImage(src) {
-            document.querySelector('.main-image img').src = src;
+            document.getElementById('mainImage').src = src;
+            // Update active class for thumbnails
+            const thumbnails = document.querySelectorAll('.thumbnail-grid img');
+            thumbnails.forEach(img => {
+                img.classList.remove('active');
+                if (img.src === src) {
+                    img.classList.add('active');
+                }
+            });
         }
         // 이미지 모달 관련
         let currentImgIdx = 0;
@@ -234,8 +213,32 @@
             currentImgIdx = (currentImgIdx + 1) % imgList.length;
             document.getElementById('modalImg').src = imgList[currentImgIdx];
         };
-
-        // Close modal when clicking outside
+        // Google Maps
+        function initMap() {
+            const location = { lat: 37.2881, lng: 127.0456 }; // 아주대학교병원 근처 좌표(예시)
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: location,
+            });
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: '아주대 4호점'
+            });
+        }
+        // Initialize map when the page loads
+        window.onload = function() {
+            initMap();
+        };
+        // Modal functions
+        function openModal() {
+            document.getElementById('contactModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            document.getElementById('contactModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
         window.onclick = function(event) {
             const modal = document.getElementById('contactModal');
             if (event.target == modal) {

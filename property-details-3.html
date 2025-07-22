@@ -16,7 +16,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a href="index.html" class="logo">Hybeliving</a>
+            <a href="landing.html" class="logo">Hybeliving</a>
             <ul class="nav-links">
                 <li><a href="index.html#services">서비스 소개</a></li>
                 <li><a href="index.html#testimonials">고객 후기</a></li>
@@ -40,14 +40,13 @@
             <!-- Image Gallery -->
             <div class="image-gallery">
                 <div class="main-image">
-                    <img src="images/seoul1/seoul1_detail1.jpg" alt="거실 전경" id="mainImage">
+                    <img src="images/seoul1/seoul1_detail1.jpg" alt="서울대점 거실 전경">
                 </div>
                 <div class="thumbnail-grid">
-                    <img src="images/seoul1/seoul1_detail1.jpg" alt="거실 전경" onclick="changeMainImage(this.src)" class="active">
-                    <img src="images/seoul1/seoul1_detail2.jpg" alt="침실" onclick="changeMainImage(this.src)">
-                    <img src="images/seoul1/seoul1_detail3.jpg" alt="주방" onclick="changeMainImage(this.src)">
-                    <img src="images/seoul1/seoul1_detail4.jpg" alt="화장실" onclick="changeMainImage(this.src)">
-                    <img src="images/seoul1/seoul1_detail5.jpg" alt="건물 외관" onclick="changeMainImage(this.src)">
+                    <img src="images/seoul1/seoul1_detail1.jpg" alt="거실" onclick="changeMainImage(this.src); openImageModal(this.src)">
+                    <img src="images/seoul1/seoul1_detail2.jpg" alt="침실" onclick="changeMainImage(this.src); openImageModal(this.src)">
+                    <img src="images/seoul1/seoul1_detail3.jpg" alt="주방" onclick="changeMainImage(this.src); openImageModal(this.src)">
+                    <img src="images/seoul1/seoul1_detail4.jpg" alt="화장실" onclick="changeMainImage(this.src); openImageModal(this.src)">
                 </div>
             </div>
 
@@ -184,10 +183,18 @@
         </div>
     </div>
 
+    <!-- Image Modal -->
+    <div id="imageModal" style="display:none;position:fixed;z-index:10000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;">
+        <button id="closeImgModal" style="position:absolute;top:32px;right:48px;font-size:2.2rem;background:none;border:none;color:#fff;cursor:pointer;z-index:10001;">&times;</button>
+        <button id="prevImgModal" style="position:absolute;left:32px;top:50%;transform:translateY(-50%);font-size:2.5rem;background:none;border:none;color:#fff;cursor:pointer;z-index:10001;">&#60;</button>
+        <img id="modalImg" src="" style="max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 4px 32px #0008;">
+        <button id="nextImgModal" style="position:absolute;right:32px;top:50%;transform:translateY(-50%);font-size:2.5rem;background:none;border:none;color:#fff;cursor:pointer;z-index:10001;">&#62;</button>
+    </div>
+
     <script>
         // Image Gallery
         function changeMainImage(src) {
-            document.getElementById('mainImage').src = src;
+            document.querySelector('.main-image img').src = src;
             
             // Update active class for thumbnails
             const thumbnails = document.querySelectorAll('.thumbnail-grid img');
@@ -198,6 +205,35 @@
                 }
             });
         }
+
+        // 이미지 모달 관련
+        let currentImgIdx = 0;
+        let imgList = [];
+        function openImageModal(src) {
+            imgList = Array.from(document.querySelectorAll('.thumbnail-grid img')).map(img => img.src);
+            currentImgIdx = imgList.indexOf(src);
+            document.getElementById('imageModal').style.display = 'flex';
+            document.getElementById('modalImg').src = src;
+        }
+        document.getElementById('imageModal').onclick = function(e) {
+            if(e.target === this) this.style.display = 'none';
+        };
+        document.getElementById('closeImgModal').onclick = function(e) {
+            e.stopPropagation();
+            document.getElementById('imageModal').style.display = 'none';
+        };
+        document.getElementById('prevImgModal').onclick = function(e) {
+            e.stopPropagation();
+            if(imgList.length === 0) return;
+            currentImgIdx = (currentImgIdx - 1 + imgList.length) % imgList.length;
+            document.getElementById('modalImg').src = imgList[currentImgIdx];
+        };
+        document.getElementById('nextImgModal').onclick = function(e) {
+            e.stopPropagation();
+            if(imgList.length === 0) return;
+            currentImgIdx = (currentImgIdx + 1) % imgList.length;
+            document.getElementById('modalImg').src = imgList[currentImgIdx];
+        };
 
         // Google Maps
         function initMap() {
